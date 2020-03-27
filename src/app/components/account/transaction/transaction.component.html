@@ -1,0 +1,41 @@
+<div class="views">
+    <div class="view">
+        <div class="view-title">
+            <div class="view-name">
+                <div class="view-name-small">Transacciones</div>
+                <div class="view-name-text">Estas realizando un {{ transaction.type }}</div>
+            </div>
+        </div>
+
+        <div class="view-content">
+            <div class="section content-data">
+                <form #accountForm="ngForm" (ngSubmit)="ngSubmit()">
+                    <div class="cell-1 data-form-type-2">
+                        <div class="input">
+                            <label class="label">Tipo de operacion</label>
+                            <input type="text" class="text" name="type" #type="ngModel" [(ngModel)]="transaction.type"
+                                readonly />
+                        </div>
+                        <div class="input">
+                            <label class="label">Monto</label>
+                            <input type="number" class="text" name="amount" #amount="ngModel"
+                                [(ngModel)]="transaction.amount" min="1" required />
+
+                        </div>
+                        <div>
+                            <small *ngIf="!amount.valid && amount.touched">
+                                El monto ingresado es incorrecto
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="buttons" style="margin-top: 15px;">
+                        <button type="submit" class="button" [disabled]="accountForm.invalid">
+                            Registrar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

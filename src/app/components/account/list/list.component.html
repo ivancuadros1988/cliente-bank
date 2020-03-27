@@ -1,0 +1,50 @@
+<div class="views">
+    <div class="view">
+        <div class="view-title">
+            <div class="view-name">
+                <div class="view-name-small">Cuentas</div>
+                <div class="view-name-text">Listado de Cuentas</div>
+            </div>
+        </div>
+    </div>
+    <div class="view-content">
+        <div class="table wide">
+            <div class="thead">
+                <div class="row">
+                    <div class="col">ID Cuenta</div>
+                    <div class="col">Total</div>
+                    <div class="col">Cliente</div>
+                    <div class="col">ID Cliente</div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+
+                </div>
+            </div>
+            <div class="tbody">
+                <div class="row" *ngFor="let p of accounts">
+                    <div class="col">{{ p.idAccount }}</div>
+                    <div class="col">{{ p.totalAmount }}</div>
+                    <div class="col">{{ p.customer.fullName }}</div>
+                    <div class="col">{{ p.customer.idCustomer }}</div>
+                    <div class="col text-center">
+                        <button class="button-ghost" (click)="redirectTransaction(p.idAccount, 'Deposit')">
+                            Depositar
+                        </button>
+                    </div>
+                    <div class="col text-center">
+                        <button class="button-ghost" (click)="redirectTransaction(p.idAccount, 'Withdrawal')">
+                            Retirar
+                        </button>
+                    </div>
+                    <div class="col text-center">
+                        <button class="button-ghost" (click)="redirectHistory(p.idAccount)">
+                            Transacciones
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

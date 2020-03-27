@@ -1,0 +1,26 @@
+<div class="login">
+    <div class="login-bg content-login">
+        <div class="login-form">
+            <div class="logo-1"></div>
+            <div class="inputs">
+                <div class="input i8">
+                    <div class="label">Usuario</div>
+                    <input type="text" class="text" autofocus required [(ngModel)]="user.username" />
+                </div>
+                <div class="input i8">
+                    <div class="label">Clave</div>
+                    <input type="password" class="text" required [(ngModel)]="user.password" />
+                </div>
+            </div>
+            <br>
+            <div class="buttons">
+                <button class="button wide" (click)="login()">Acceder</button>
+            </div>
+            <div>
+                <div *ngIf="errorMessage" style="color: red">
+                    {{ errorMessage }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

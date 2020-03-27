@@ -1,0 +1,34 @@
+<div>
+    <div class="views">
+        <div class="view">
+            <div class="view-title">
+                <div class="view-name">
+                    <div class="view-name-small">Transacciones</div>
+                    <div class="view-name-text">Listado de Transacciones</div>
+                </div>
+            </div>
+        </div>
+        <div class="view-content">
+            <div class="table wide">
+                <div class="thead">
+                    <div class="row">
+                        <div class="col">ID Transaccion</div>
+                        <div class="col">Total</div>
+                        <div class="col">Tipo</div>
+                        <div class="col">Fecha</div>
+                        <div class="col">ID Cuenta</div>
+                    </div>
+                </div>
+                <div class="tbody">
+                    <div class="row" *ngFor="let p of transactions">
+                        <div class="col">{{ p.idTransaction }}</div>
+                        <div class="col">{{ p.amount }}</div>
+                        <div class="col">{{ p.type }}</div>
+                        <div class="col">{{ p.creationDate }}</div>
+                        <div class="col">{{ p.accountId }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
